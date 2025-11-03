@@ -1,0 +1,74 @@
+
+.content_clients {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    .team_logos {
+        img {
+            background-color: #fff;
+        }
+    }
+}
+.about__text__two h4 {
+    color: #fff;
+}
+
+.client-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.client-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  align-items: center;
+}
+
+.client-slide {
+  flex: 0 0 auto;
+  width: calc(100% / 6); // Desktop default 5 logos
+  padding: 10px;
+
+  img {
+    width: 90%;
+    object-fit: contain;
+    // filter: grayscale(100%);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+}
+
+// Responsive: Mobile
+@media (max-width: 767px) {
+  .client-slide {
+    width: 100%; // Mobile: 1 logo per slide
+  }
+}
+
+
+// dfghujiytrfdvghytfcvhgytfgvbhuygvb \
+.client-slide {
+  padding: 10px;
+  img {
+    width: 100%;
+    object-fit: contain;
+    // filter: grayscale(100%);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+}
+
+.carousel-inner {
+  display: flex;
+  align-items: center;
+}

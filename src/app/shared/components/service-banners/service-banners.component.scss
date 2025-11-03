@@ -1,0 +1,33 @@
+.page__title {
+  position: relative;
+  overflow: hidden;
+
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  // Ensures video covers entire area
+    z-index: 0;
+    transform: translate(0, 0);
+  }
+
+  .auto-container,
+  .content__box {
+    position: relative;
+    z-index: 2; // keep content above video
+    color: #fff; // make text visible on video
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); // optional dark overlay for readability
+    z-index: 1;
+  }
+}

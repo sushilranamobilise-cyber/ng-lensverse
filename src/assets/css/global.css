@@ -2616,7 +2616,7 @@ body.out .mouse-pointer {
 }
 .title__data:before {
   content: "";
-  background-image: url(../images/resource/02.png);
+  /* background-image: url(../images/resource/02.png); */
   width: 50px;
   height: 70px;
   position: absolute;

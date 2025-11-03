@@ -1622,7 +1622,8 @@ section.banner__two:before {
 /* portfolio-section-end */
 .page__title {
     margin-top: 30px;
-    padding: 232px 0px;
+    /* padding: 232px 0px; */
+    padding: 172px 0px;
     text-align: center;
 }
 .page__title .bg-layer {
@@ -1635,19 +1636,21 @@ section.banner__two:before {
     background-size: cover;
 }
 .bread__crumb li {
-    text-align: center;
-    font-family: Archivo;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
+    text-align: left;
+    /* font-family: Archivo; */
+    font-size: 14px;
+    /* font-style: normal; */
+    /* font-weight: 600; */
     line-height: normal;
-    letter-spacing: 13.2px;
+    letter-spacing: 3px;
+    /* letter-spacing: 13.2px; */
     color: #F6EC4F;
     text-transform: uppercase;
 }
 .bread__crumb {
     display: flex;
-    justify-content: center;
+    margin-bottom: 4%;
+    /* justify-content: center; */
 }
 .page__title .title {
     font-family: Archivo;

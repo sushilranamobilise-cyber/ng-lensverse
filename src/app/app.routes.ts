@@ -24,11 +24,11 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'main-dashboard',
+                redirectTo: 'home',
                 pathMatch: 'full'
             },
             {
-                path: 'main-dashboard',
+                path: 'home',
                 loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
             }
         ]
@@ -38,7 +38,7 @@ export const routes: Routes = [
         component: OnlyHeaderComponent,
         children: [
             {
-                path: 'main-dashboard',
+                path: 'home',
                 loadChildren: () => import('./modules/inner-pages/inner-pages.module').then(m => m.InnerPagesModule)
             }
         ]

@@ -14,34 +14,34 @@ export class ServicesComponent {
 
   
   allServices = [
-    {
-      title: 'Visual Production',
-      text: 'High-quality corporate photography & videography.',
-      icon: 'icon-04',
-      buttonIcon: 'icon-05',
-      link: ''
-    },
-    {
-      title: 'Post-Production',
-      text: 'Editing, color grading, motion & cinematic finishing.',
-      icon: 'icon-08',
-      buttonIcon: 'icon-05',
-      link: ''
-    },
-    {
-      title: 'AI & Machine Learning ',
-      text: 'Smart, AI-powered creative storytelling.',
-      icon: 'icon-12',
-      buttonIcon: 'icon-05',
-      link: ''
-    },
-    {
-      title: 'Brand & Influencer Content',
-      text: 'Engaging content for brands & creators.',
-      icon: 'icon-04',
-      buttonIcon: 'icon-05',
-      link: ''
-    },
-    
-  ];
+  {
+    id: 1,
+    title: 'Visual Production',
+    text: 'High-quality corporate photography & videography.',
+    icon: 'icon-04',
+    buttonIcon: 'icon-05',
+  },
+  {
+    id: 2,
+    title: 'Post-Production',
+    text: 'Editing, color grading, motion & cinematic finishing.',
+    icon: 'icon-08',
+    buttonIcon: 'icon-05',
+  },
+  {
+    id: 3,
+    title: 'AI & Machine Learning',
+    text: 'Smart, AI-powered creative storytelling.',
+    icon: 'icon-12',
+    buttonIcon: 'icon-05',
+  },
+  {
+    id: 4,
+    title: 'Brand & Influencer Content',
+    text: 'Engaging content for brands & creators.',
+    icon: 'icon-04',
+    buttonIcon: 'icon-05',
+  },
+];
+
 }

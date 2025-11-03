@@ -1,20 +1,20 @@
-    <app-inner-banner title="Our Services" paragraph="Our Servcies"></app-inner-banner>
+    <app-inner-banner title="Our Services" paragraph="Our Services"></app-inner-banner>
     <!-- service-page end-->
         <div class="service__page p_relative see__pad">
             <div class="auto-container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms" *ngFor="let item of allServices">
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms" *ngFor="let service of allServices">
                         <div class="service__block">
                             <div class="service__icon">
-                            <i [class]="item.icon"></i>
+                            <i [class]="service.icon"></i>
                             <div class="service__icon__two"></div>
                             </div>
                             <div class="service__text">
-                            <h4><a [routerLink]="item.link">{{ item.title }}</a></h4>
-                            <p>{{ item.text }}</p>
+                            <h4><a [routerLink]="['/home/services', service.id]">{{ service.title }}</a></h4>
+                            <p>{{ service.text }}</p>
                             </div>
                             <div class="service__button">
-                            <a [routerLink]="item.link"><i [class]="item.buttonIcon"></i></a>
+                            <a [routerLink]="['/home/services', service.id]"><i [class]="service.buttonIcon"></i></a>
                             </div>
                         </div>
                     </div>
