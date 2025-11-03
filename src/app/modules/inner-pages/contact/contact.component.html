@@ -1,0 +1,84 @@
+        <app-inner-banner title="Contact Us" paragraph="Contact Us"></app-inner-banner>
+
+<!-- contact-page -->
+        <section class="contact__page p_relative see__pad">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-ms-12">
+                        <div class="contact__left">
+                            <figure>
+                                <img src="assets/images/resource/contact.jpg" alt="">
+                            </figure>
+                            <h4>Contact Information</h4>
+                            <div class="contact__info">
+                                <div class="contact__block">
+                                    <div class="icon">
+                                        <i class="icon-19"></i>
+                                    </div>
+                                    <div class="contact__text">
+                                        <a href="tell:3025550107">(302) 555-0107</a> <br>
+                                        <a href="tell:3025550107">(207) 555-0119</a>
+                                    </div>
+                                </div>
+                                <div class="contact__block">
+                                    <div class="icon two">
+                                        <i class="icon-20"></i>
+                                    </div>
+                                    <div class="contact__text">
+                                        <a href="mailto:connect&#64;lensverse.in">connect&#64;lensverse.in</a> <br>
+                                        <a href="mailto:connect&#64;lensverse.in">connect&#64;lensverse.in</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-12">
+                        <div class="contact__right">
+                            <div class="form__title">
+                                <div class="title__data">
+                                    <div class="sub__title">
+                                        <h4>Contact Us</h4>
+                                    </div>
+                                    <div class="title">
+                                        <h2>Get a Free Quote</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-inner">
+                                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="default-form">
+                                    <div class="row clearfix">
+                                        <div class="col-xl-6 form-group">
+                                        <input type="text" formControlName="name" placeholder="Your Name *" required>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-12 form-group">
+                                        <input type="email" formControlName="email" placeholder="Your Email *" required>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-12 form-group">
+                                        <input type="text" formControlName="subject" placeholder="Your Subject ">
+                                        </div>
+                                        <div class="col-xl-6 col-lg-12 form-group">
+                                        <input type="text" formControlName="phone" placeholder="Your Phone ">
+                                        </div>
+                                        <div class="col-xl-6 col-lg-12 form-group">
+                                        <textarea formControlName="message" placeholder="Message"></textarea>
+                                        </div>
+                                        <div class="col-xl-12 form-group message-btn btn-box">
+                                        <button class="theme-btn theme-btn-one" type="submit">Send your Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contact-page end-->
+
+        <!-- google-map -->
+        <div class="google__map">
+            <figure>
+                <img src="assets/images/resource/map.jpg" alt="">
+            </figure>
+        </div>
+        <!-- google-map -->
