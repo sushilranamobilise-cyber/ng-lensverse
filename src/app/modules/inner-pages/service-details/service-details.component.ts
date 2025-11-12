@@ -4,101 +4,205 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { InnerBannerComponent } from "../../../shared/components/inner-banner/inner-banner.component";
 import { ServiceBannersComponent } from "../../../shared/components/service-banners/service-banners.component";
 
+/** ---------- Types ---------- */
+interface SubService {
+  id: string;            // url slug / key, e.g. 'real-estate'
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+interface Service {
+  id: number;
+  title: string;
+  description?: string;
+  image?: string;         // main image
+  imageAlt?: string;
+  subServices: SubService[];
+}
+
+/** ---------- Data (professional) ---------- */
+const ALL_SERVICES: Service[] = [
+  {
+    id: 1,
+    title: 'Visual Production',
+    description: 'High-quality corporate photography & videography.',
+    image: 'assets/images/services/vp/realstate.jpg',
+    subServices: [
+      {
+        id: 'real-estate',
+        title: 'Real Estate & Hospitality Shoots',
+        description: 'Showcase your property or hospitality business with high-quality photography and cinematic videography for hotels, resorts and commercial spaces.',
+        image: 'assets/images/services/vp/realstate.jpg'
+      },
+      {
+        id: 'corporate',
+        title: 'Corporate Shoots',
+        description: 'Professional corporate photography and videography — conferences, events, employee testimonials and brand films.',
+        image: 'assets/images/services/vp/corprate.jpg'
+      },
+      {
+        id: 'fashion',
+        title: 'Fashion & Editorial Shoots',
+        description: 'Fashion lookbooks, editorial campaigns and model portfolios with creative direction and studio/outdoor setups.',
+        image: 'assets/images/services/vp/fesion.jpg'
+      },
+      {
+        id: 'automobile',
+        title: 'Product & Automobile Shoots',
+        description: 'High-end product photography and automobile campaigns for catalogs, websites and ads.',
+        image: 'assets/images/services/vp/automobiles.png'
+      },
+      {
+        id: 'drone',
+        title: 'Drone Shoots',
+        description: 'Aerial photography & videography for real estate, events and cinematic projects.',
+        image: 'assets/images/services/vp/dron_suit.jpg'
+      },
+      {
+        id: 'live-stream',
+        title: 'Live Streaming & Broadcasting',
+        description: 'Multi-camera live streaming, webinars and event broadcasting solutions.',
+        image: 'assets/images/services/vp/live_streeming.jpg'
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: 'Post-Production',
+    description: 'Editing, color grading, motion & cinematic finishing.',
+    image: 'assets/images/services/pp/main.jpg',
+    subServices: [
+      {
+        id: 'retouching',
+        title: 'Image Retouching & High-End Editing',
+        description: 'Professional retouching and high-end editing for stills and product photography.',
+        image: 'assets/images/services/pp/retouching.jpg'
+      },
+      {
+        id: 'video-editing',
+        title: 'Video Editing & Motion Graphics',
+        description: 'Polish your footage with editing, motion graphics and storytelling edits.',
+        image: 'assets/images/services/pp/video-editing.jpg'
+      },
+      {
+        id: 'vfx',
+        title: 'Visual Effects (VFX)',
+        description: 'Compositing, CGI and creative VFX to add cinematic value to your projects.',
+        image: 'assets/images/services/pp/vfx.jpg'
+      },
+      {
+        id: 'color-grading',
+        title: 'Color Grading & Correction',
+        description: '专业级 colour grading to set the mood and tone for your videos.',
+        image: 'assets/images/services/pp/color-grading.jpg'
+      },
+      {
+        id: 'animation',
+        title: '2D / 3D Animation',
+        description: 'Explainers, product animations and motion design in 2D/3D.',
+        image: 'assets/images/services/pp/animation.jpg'
+      },
+      {
+        id: 'graphic-design',
+        title: 'Graphic Design & Layout',
+        description: 'Posters, banners and layouts for digital & print campaigns.',
+        image: 'assets/images/services/pp/graphic.jpg'
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: 'AI & Machine Learning',
+    description: 'Smart, AI-powered creative services and data annotation.',
+    image: 'assets/images/services/ai/main.jpg',
+    subServices: [
+      {
+        id: 'data-annotation',
+        title: 'Data Annotation for AI & ML',
+        description: 'Image, video, text and audio annotation for training robust models.',
+        image: 'assets/images/services/ai/data-annotation.jpg'
+      },
+      {
+        id: 'nlp',
+        title: 'Text Annotation & NLP',
+        description: 'Entity labeling, sentiment tagging and other NLP annotations.',
+        image: 'assets/images/services/ai/nlp.jpg'
+      },
+      {
+        id: 'speech',
+        title: 'Audio & Speech Annotation',
+        description: 'Transcription, speaker labelling and audio event tagging.',
+        image: 'assets/images/services/ai/speech.jpg'
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: 'Brand & Influencer Content',
+    description: 'Creative content for brands, influencers & creators.',
+    image: 'assets/images/services/brand/main.jpg',
+    subServices: [
+      {
+        id: 'content-creation',
+        title: 'Content Creation for Brands & Influencers',
+        description: 'Concept-to-delivery social videos, reels and brand storytelling.',
+        image: 'assets/images/services/brand/content.jpg'
+      },
+      {
+        id: 'scriptwriting',
+        title: 'Scriptwriting & Strategy',
+        description: 'Content strategy, scripting and campaign planning.',
+        image: 'assets/images/services/brand/scriptwriting.jpg'
+      },
+      {
+        id: 'editing-packages',
+        title: 'Editing Packages for Creators',
+        description: 'End-to-end editing packages optimized for platforms and formats.',
+        image: 'assets/images/services/brand/editing.jpg'
+      }
+    ]
+  }
+];
+
 @Component({
   selector: 'app-service-details',
   standalone: true,
-  imports: [CommonModule, InnerBannerComponent, RouterModule, ServiceBannersComponent], // 👈 CommonModule add
+  imports: [CommonModule, InnerBannerComponent, RouterModule, ServiceBannersComponent],
   templateUrl: './service-details.component.html',
-  styleUrls: ['./service-details.component.scss'] // 👈 styleUrls (array) use karo
+  styleUrls: ['./service-details.component.scss']
 })
 export class ServiceDetailsComponent implements OnInit {
 
   serviceId: number | null = null;
-  serviceData: any;
+  serviceData: Service | null = null;
 
-  allServices = [
-    { 
-      id: 1, 
-      img: 'assets/images/services/vp/realstate.jpg',
-      img2: 'assets/images/services/vp/corprate.jpg',
-      img3: 'assets/images/services/vp/fesion.jpg',
-      img4: 'assets/images/services/vp/automobiles.png',
-      img5: 'assets/images/services/vp/dron_suit.jpg',
-      img6: 'assets/images/services/vp/live_streeming.jpg',
-      title: 'Visual Production',
-      title2: 'Real Estate & Hospitality Shoots',
-      title3: 'Corporate Shoots',
-      title4: 'Fashion & Editorial Shoots',
-      title5: 'Product & Automobile Shoots',
-      title6: 'Drone Shoots',
-      title7: 'Live Streaming & Broadcasting',
-      // text2: 'Showcase your property or hospitality business with high-quality photography and videography. Our expertise covers: Hotels, resorts, and restaurants Food photography and videography Commercial property shoots HDR technique for stunning, vibrant imagery  videos highlighting hospitality and amenities We capture spaces and experiences that leave a lasting impression on potential clients and guests.',
-      text3: 'We provide end-to-end corporate photography and videography solutions to showcase your brand professionally. Our services include: Corporate photo and video shoots Webinar recordings and live streaming Employee testimonials and interviews  Conference and seminar coverage Whether it’s for marketing campaigns, internal communications, or brand storytelling, we ensure your corporate visuals are polished, engaging, and impactful.',
-      text4: 'Our fashion and editorial services bring style, creativity, and storytelling to life. We specialize in: Fashion lookbooks and catalog shoots Editorial campaigns for magazines or brands Model portfolios and creative concepts Studio and outdoor photography setups From concept development to final visuals, we create compelling imagery that represents your fashion brand with flair and professionalism.',
-      text5: 'We provide high-quality product and automobile photography and videography designed to make your products stand out. Our services include: E-commerce product photography Catalog and marketing visuals Automobile exterior and interior shoots 360° product videos and promotional content Perfect for online stores, advertisements, and brand campaigns, our visuals highlight every detail with precision.',
-      text6: 'Take your visuals to new heights with professional drone photography and videography. We offer: Aerial shots for real estate, hospitality, and events Cinematic promotional videos Scenic aerial photography for creative projects Our drone services provide unique perspectives that elevate your brand storytelling.',
-      text7: 'Engage your audience in real-time with our live streaming and broadcast services. We handle: Corporate events and webinars Conferences and panel discussions Festivals and public events Multi-camera setups for professional broadcasts We ensure seamless, high-quality streaming experiences that connect you with your audience effectively.'
-    },
-    { 
-      id: 2, 
-      title: 'Post-Production', 
-      title2: 'Image Retouching & High-End Editing',
-      title3: 'Video Editing & Motion Graphics',
-      title4: 'Visual Effects (VFX)',
-      title5: 'Color Grading & Correction',
-      title6: '2D/3D Animation',
-      title7: 'Graphic Design & Layout Creation',
-      title8: '3D Modeling for Products & Architecture',
-      text2: 'Enhance your visuals with professional image retouching and high-end editing.',
-      text3: 'Transform raw footage into polished, engaging videos. Our video editing services include motion graphics, transitions, and dynamic storytelling that captivate your audience and elevate your brand.',
-      text4: 'Bring creativity to life with cutting-edge visual effects. From compositing to CGI integration, our VFX services add cinematic quality and unique flair to your videos and films.',
-      text5: 'Set the perfect mood with professional color grading and correction. We enhance visuals with precise color tones, contrast, and mood adjustments to make every frame look stunning and cohesive.',
-      text6: 'Communicate ideas creatively with 2D and 3D animations. We create animated explainer videos, promotional content, and motion visuals that make your brand message clear and memorable.',
-      text7: 'From digital graphics to print layouts, our design team delivers eye-catching visuals that reflect your brand identity. Services include posters, brochures, banners, social media content, and more.', 
-      text8: 'Visualize products and architectural designs with detailed 3D modeling. Our services include photorealistic renderings, product prototypes, and architectural visualizations that impress clients and stakeholders.' 
-    },
-    { 
-      id: 3, 
-      title: 'AI & Machine Learning',
-      title2: 'Data Annotation Services for AI & ML',
-      title3: '',
-      title4: '',
-      title5: '',
-      title6: '',
-      title7: '',
-      text2: 'We provide precise and high-quality data annotation services to help train and improve AI and machine learning models. Our services include:',
-      text3: 'Image & Video Annotation: Object detection, segmentation, and labeling for computer vision models.',
-      text4: 'Text Annotation: Sentiment analysis, entity recognition, and categorization for NLP applications.',
-      text5: 'Audio & Speech Annotation: Transcription, speech labeling, and sound event tagging.',
-      text6: '3D Point Cloud Annotation: Labeling and segmentation for autonomous vehicles and robotics.',
-      text7: 'Custom Annotation Projects: Tailored solutions to meet your AI/ML dataset requirements.', 
-      text8: 'Our skilled team ensures accuracy, consistency, and fast turnaround, enabling your AI models to achieve better performance and reliability.' 
-    },
-    { 
-      id: 4, 
-      title: 'Brand & Influencer Content', 
-      title2: 'Content Creation for Brands & Influencers',
-      title3: 'Scriptwriting, Content Planning & Strategy',
-      title4: 'Short-Form Video Production (Reels, Shorts)',
-      title5: 'Voiceover Recording & Audio Narration',
-      title6: 'Editing Packages for Content Creators',
-      title7: 'Campaign Ideation and Creative Direction',
-      text2: 'We help brands and influencers craft engaging content that resonates with their audience. Our services include:',
-      text3: 'Develop compelling scripts, plan content calendars, and create strategies to maximize engagement and reach for your brand or personal profile.',
-      text4: 'Produce high-quality, attention-grabbing short-form videos optimized for social media platforms like Instagram, YouTube, and Linkedin.',
-      text5: 'Add professional voiceovers and audio narration to your content for a polished, impactful presentation.',
-      text6: 'Customized editing services including cuts, transitions, effects, and branding to make your content stand out.',
-      text7: 'From brainstorming concepts to executing full campaigns, we provide creative direction to bring your brand stories to life.' 
-    }
-  ];
+  // now typed and imported from constant above
+  allServices: Service[] = ALL_SERVICES;
+
+  // subCards derived from the selected service's subServices
+  subCards: SubService[] = [];
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
- ngOnInit(): void {
-  this.route.paramMap.subscribe(params => {
-    this.serviceId = Number(params.get('id'));
-    this.serviceData = this.allServices.find(s => s.id === this.serviceId);
-  });
-}
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.serviceId = params.get('id') ? Number(params.get('id')) : null;
+      this.serviceData = this.allServices.find(s => s.id === this.serviceId) || null;
 
+      if (this.serviceData && Array.isArray(this.serviceData.subServices)) {
+        // use subServices directly (keeps data consistent)
+        this.subCards = this.serviceData.subServices.slice(); // shallow copy
+      } else {
+        this.subCards = [];
+      }
+    });
+  }
+
+  // helper to navigate to a sub-service (programmatic)
+  openSubService(subId: string) {
+    if (this.serviceId != null) {
+      this.router.navigate(['/home', 'services', this.serviceId, 'sub', subId]);
+    }
+  }
 }

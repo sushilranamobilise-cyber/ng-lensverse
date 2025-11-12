@@ -37,15 +37,25 @@ const routes: Routes = [
       data: { bannerTitle: 'Gallery', bannerText: 'Gallery' }
     },
     {
+      path: 'services/:id/sub/:subId',
+      component: SubServiceComponent,
+      data: { bannerTitle: 'Sub Service', bannerText: 'Sub Service Details' }
+    },
+    {
       path: 'services/:id',
       component:ServiceDetailsComponent,
       data: { bannerTitle: 'Service Details', bannerText: 'Service Details' }
     },
-    {
-      path: 'sub-service',
-      component:SubServiceComponent,
-      data: { bannerTitle: 'Sub Service', bannerText: 'Service Details' }
-    },
+    // {
+    //   path: 'sub_service',
+    //   component:InnerServiceComponent,
+    //   data: { bannerTitle: 'Service', bannerText: 'This is about page paragraph...' }
+    // },
+    // {
+    //   path: 'sub_service0',
+    //   component:SubServiceComponent,
+    //   data: { bannerTitle: 'Sub Service', bannerText: 'Service Details' }
+    // },
     {
       path: 'blog/blog-details',
       component:BlogsDetailsComponent,

@@ -1,215 +1,222 @@
-        <app-inner-banner title="About Us" paragraph="About Us"></app-inner-banner>
-        <!-- about -->
-        <section class="about__section about__page p_relative see__pad">
-            <div class="pattern-layer">
-                <div class="pattern-2 p_absolute" data-parallax='{"x": -50}' style="background-image: url(assets/images/shapes/shape-02.png);"></div>
-            </div>
-            <div class="boild__text">
-                <h1>Lensverse</h1>
-            </div>
-            <div class="auto-container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="about__block p_relative">
-                            <figure class="wow zoomIn animated" data-wow-delay="100ms" data-wow-duration="1500ms">
-                                <img src="assets/images/resource/about-us.png" alt="">
-                            </figure>
-                            <div class="funfact__content about" style="background-image: url(assets/images/shapes/shape-01.png);">
-                                <div class="count-outer count-box d-flex">
-                                    <h1 class="count-text" data-speed="1500" data-stop="2">798</h1>
-                                    <span>K+</span>
-                                </div>
-                                <p>World wide Client</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-5 col-md-12">
-                        <div class="about__text__block">
-                            <div class="sub__title">
-                                <h4>About Company</h4>
-                            </div>
-                            <div class="title two">
-                                <h2>Enhancing Real-world Experiences with AR <span>Technology</span></h2>
-                            </div>
-                            <div class="texts">
-                                <p>The applications of AR are vast and diverse. From entertainment and gaming, where users can see virtual characters in their surroundings, to education, where complex subjects can be visualized and explained in an immersive way,.</p>
-                                <p>The applications of AR are vast and diverse. From entertainment and gaming, where users can see virtual characters in their surroundings, to education, where complex subjects can be visualized and explained in an immersive way,.</p>
-                            </div>
-                            <!-- <div class="btn-box">
-                                <a href="about.html" class="theme-btn theme-btn-one"><i class="icon-02"></i> About more</a>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- about-end -->
+<!-- banner uses subData title if available, otherwise parent service title -->
+<app-service-banners
+  [title]="subData?.title || serviceData?.title || 'Sub Service'"
+  [paragraph]="subData?.title || serviceData?.title || 'Sub Service'">
+</app-service-banners>
 
-        <!-- choose -->
-        <section class="choose__us p_relative">
-            <div class="choose__us__data">
-                <div class="auto-container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="choose__block">
-                                <figure>
-                                    <img src="assets/images/resource/choose-01.png" alt="">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            <div class="choose__block__right">
-                                <div class="title__data">
-                                    <div class="sub__title">
-                                        <h4>Why choose us</h4>
-                                    </div>
-                                    <div class="title">
-                                        <h2>We Provide Your Best Work </h2>
-                                    </div>
-                                </div>
-                                <div class="team__data">
-                                    <div class="team__data__left">
-                                        <img src="assets/images/resource/choose-02.svg" alt="">
-                                    </div>
-                                    <div class="team__data__right">
-                                        <h3>+10x Creative Impact :</h3>
-                                        <p>Every frame we shoot is powered by AI precision and human artistry- redefining visual storytelling.</p>
-                                    </div>
-                                </div>
-                                <div class="team__data">
-                                    <div class="team__data__left">
-                                        <img src="assets/images/resource/choose-02.svg" alt="">
-                                    </div>
-                                    <div class="team__data__right">
-                                        <h3>+100 Brands Transformed :</h3>
-                                        <p>From hotels to corporates. we’ve helped brands turn visuals into powerful business assets.</p>
-                                    </div>
-                                </div>
-                                <div class="team__data three">
-                                    <div class="team__data__left">
-                                        <img src="assets/images/resource/choose-02.svg" alt="">
-                                    </div>
-                                    <div class="team__data__right">
-                                        <h3>+85% Faster Delivery :</h3>
-                                        <p>Shoot. Edit. Deliver. All in record time with Lensverse’s AI-driven production workflow.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="service__details p_relative">
+  <div class="auto-container">
+    <div class="row">
+      <!-- LEFT: Sidebar (All Services) -->
+      <div class="col-xl-4 col-lg-6 col-md-12">
+        <div class="service__details__left">
+          <div class="sidebar__widget">
+            <div class="all__service">
+              <h4>All Services</h4>
             </div>
-        </section>
-        <!-- choose-end -->
+            <ul class="service__details__1__cat">
+              <li *ngFor="let s of allServices">
+                <a [routerLink]="['/home','services', s.id]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                  {{ s.title }} <i class="icon-02"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        <!-- team-section -->
-        <!-- <section class="team__section see__pad p_relative">
-            <div class="pattern-layer">
-                <div class="pattern-3 p_absolute" data-parallax='{"y": 50}' style="background-image: url(assets/images/shapes/shape-03.png);"></div>
+          <div class="sidebar__widget_network" style="background-image: url(assets/images/resource/base.png);">
+            <h3>Contact Us For Any Require</h3>
+            <div class="services__icon">
+              <i class="icon-19"></i>
             </div>
-            <div class="auto-container">
-                <div class="title__data">
-                    <div class="sub__title">
-                        <h4>Team Members</h4>
-                    </div>
-                    <div class="title">
-                        <h2>We Have Expert Member</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="team__block wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                            <div class="team__img">
-                                <figure>
-                                    <img src="assets/images/resource/team-01.png" alt="">
-                                </figure>
-                            </div>
-                            <div class="team__name">
-                                <h3>Annette Black</h3>
-                            </div>
-                            <div class="team__media">
-                                <ul>
-                                    <li><a href="#">FB.</a></li>
-                                    <li><a href="#">TW.</a></li>
-                                    <li><a href="#">LI</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="team__block wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
-                            <div class="team__img">
-                                <figure>
-                                    <img src="assets/images/resource/team-02.png" alt="">
-                                </figure>
-                            </div>
-                            <div class="team__name">
-                                <h3>Kristin Watson</h3>
-                            </div>
-                            <div class="team__media">
-                                <ul>
-                                    <li><a href="#">FB.</a></li>
-                                    <li><a href="#">TW.</a></li>
-                                    <li><a href="#">LI</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="team__block wow fadeInUp animated" data-wow-delay="400ms" data-wow-duration="1500ms">
-                            <div class="team__img">
-                                <figure>
-                                    <img src="assets/images/resource/team-03.png" alt="">
-                                </figure>
-                            </div>
-                            <div class="team__name">
-                                <h3>Devon Lane</h3>
-                            </div>
-                            <div class="team__media">
-                                <ul>
-                                    <li><a href="#">FB.</a></li>
-                                    <li><a href="#">TW.</a></li>
-                                    <li><a href="#">LI</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="team__block wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <div class="team__img">
-                                <figure>
-                                    <img src="assets/images/resource/team-04.png" alt="">
-                                </figure>
-                            </div>
-                            <div class="team__name">
-                                <h3>Kristin Watson</h3>
-                            </div>
-                            <div class="team__media">
-                                <ul>
-                                    <li><a href="#">FB.</a></li>
-                                    <li><a href="#">TW.</a></li>
-                                    <li><a href="#">LI</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- team-section-end -->
-
-        <!-- pride-section -->
-        <div class="pride__section p_relative see__pad">
-            <div class="pride__layer" style="background-image:url(assets/images/resource/bg-04.jpg)"></div>
-            <div class="auto-container">
-                <div class="pride__block">
-                    <figure>
-                        <!-- <img src="assets/images/resource/icon-04.png" alt=""> -->
-                    </figure>
-                    <h1>We pride ourselves on our excellent support
-                        and service</h1>
-                </div>
-            </div>
+            <p>Need help? Call us:</p>
+            <a href="tel:+918468895724"><h4>+91 84688 95724</h4></a>
+          </div>
         </div>
-        <!-- pride-section-end -->
+      </div>
+
+      <!-- RIGHT: Sub-service content -->
+      <div class="col-xl-8 col-lg-12 col-md-12">
+        <h2 class="mb-4">{{ subData?.title || serviceData?.title }}</h2>
+
+        <div class="service__right">
+          <!-- Sub-service detailed hero + content (Bootstrap 4.4.1) -->
+            <section class="subservice-hero py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                <!-- Left: Heading + short info -->
+                <div class="col-lg-6">
+                    <h4 class="display-5 font-weight-bold mb-2">{{ subData?.title || serviceData?.title }}</h4>
+                    <p class="text-muted lead mb-3">{{ subData?.description || serviceData?.description }}</p>
+
+                    <div class="mb-3 d-flex gap-2">
+                    <!-- <a class="theme-btn theme-btn-seven mr-2" [routerLink]="['/home','services', serviceId]">
+                    <i class="icon-05"></i>
+                    </a> -->
+                    <button type="submit" class="btn btn-outline-light mr-2">
+                        <i class="icon-06"></i> 
+                    </button>
+                    <a class="theme-btn theme-btn-one" href="home/contact">
+                        Request Quote
+                    </a>
+                    </div>
+
+                    <ul class="list-unstyled text-small text-muted">
+                    <li><strong>Category:</strong> {{ serviceData?.title }}</li>
+                    <li><strong>Typical deliverables:</strong> Stills, Aerials, Short Video</li>
+                    <li><strong>Turnaround:</strong> 3–7 business days</li>
+                    </ul>
+                </div>
+
+                <!-- Right: Hero image -->
+                <div class="col-lg-6 text-center">
+                    <img [src]="subData?.image || serviceData?.image || 'https://via.placeholder.com/800x450'"
+                        class="img-fluid rounded shadow-sm" alt="{{ subData?.title || serviceData?.title }}">
+                </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- Main content: description, features, gallery -->
+            <section class="subservice-content py-4">
+            <div class="container">
+                <div class="row">
+                <!-- Main column -->
+                <div class="col-lg-8">
+                    <h3 class="mb-3">Overview</h3>
+                    <p class="text-justify">{{ subData?.longDescription || subData?.description || serviceData?.description }}</p>
+
+                    <h5 class="mt-4">What we include</h5>
+                    <div class="row">
+                    <div class="col-md-6 mb-2" *ngFor="let feat of (subData?.features || defaultFeatures)">
+                        <div class="d-flex align-items-start">
+                        <div class="mr-3">
+                            <div class="feature-icon theme-btn-one text-white rounded-circle d-flex align-items-center justify-content-center" style="width:44px;height:44px;">
+                            <i class="icon-17"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>{{ feat.title }}</strong>
+                            <div class="text-muted small">{{ feat.subtitle }}</div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <h5 class="mt-4">Gallery</h5>
+                    <div class="row">
+                    <div class="col-6 col-md-4 mb-3" *ngFor="let img of (subData?.gallery || [subData?.image, serviceData?.image])">
+                        <a href="{{ img }}" target="_blank">
+                        <img [src]="img || 'https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ'" class="img-fluid rounded" alt="gallery">
+                        </a>
+                    </div>
+                    </div>
+
+                    <h5 class="mt-4">Featured case study</h5>
+                    <div class="card mb-4">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                        <img src="https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ" class="img-fluid rounded-left" alt="case study">
+                        </div>
+                        <div class="col-md-7">
+                        <div class="card-body">
+                            <h6 class="card-title">Oakwood Residences — Visual Refresh</h6>
+                            <p class="card-text text-muted">A 2-week shoot + edit package that increased listing leads by 180% across targeted channels.</p>
+                            <a class="btn btn-sm btn-outline-light" href="#">Read case study</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="col-lg-4">
+                    <div class="card mb-3">
+                    <div class="card-body">
+                        <h6 class="card-title">Quick Quote</h6>
+                        <p class="text-muted small">Tell us a few details and we’ll share an estimate within one business day.</p>
+
+                        <ul class="list-unstyled mb-3">
+                        <li><strong>Starter:</strong> 10 photos + basic edit</li>
+                        <li><strong>Pro:</strong> 25 photos + drone + short video</li>
+                        <li><strong>Enterprise:</strong> Full production + walkthrough</li>
+                        </ul>
+
+                        <a class="theme-btn theme-btn-one" href="home/contact">Get a quote</a>
+                    </div>
+                    </div>
+
+                    <div class="card mb-3">
+                    <div class="card-body">
+                        <h6 class="card-title">Technical specs</h6>
+                        <ul class="list-unstyled text-muted small">
+                        <li>4K Video capture</li>
+                        <li>HDR Photo processing</li>
+                        <li>Drone (where permitted)</li>
+                        </ul>
+                        <a class="btn btn-sm btn-outline-secondary" href="#">Download tech sheet (PDF)</a>
+                    </div>
+                    </div>
+                </aside>
+                </div>
+            </div>
+            </section>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- contact block (same as service-details) -->
+<div class="service__contact see__pad p_relative">
+  <div class="auto-container">
+    <div class="service__contact__block">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="service__form__data">
+            <div class="form__title">
+              <div class="title__data">
+                <div class="sub__title"><h4>Contact Us</h4></div>
+                <div class="title"><h2>Send message</h2></div>
+              </div>
+            </div>
+            <div class="form-inner">
+              <form method="post" action="https://html.themenests.com/datamatrix/contact.php" class="default-form">
+                <div class="row clearfix">
+                  <div class="col-xl-6 form-group">
+                    <input type="text" name="name" placeholder="Your Name *" required>
+                  </div>
+                  <div class="col-xl-6 col-lg-12 form-group">
+                    <input type="email" name="email" placeholder="Your Email *" required>
+                  </div>
+                  <div class="col-xl-6 col-lg-12 form-group">
+                    <input type="text" name="subject" placeholder="Your Subject " required>
+                  </div>
+                  <div class="col-xl-6 col-lg-12 form-group">
+                    <input type="text" name="phone" placeholder="Your Phone " required>
+                  </div>
+                  <div class="ccol-xl-6 col-lg-12 form-group">
+                    <textarea name="message" placeholder="Message"></textarea>
+                  </div>
+                  <div class="col-xl-12 form-group message-btn btn-box">
+                    <button class="theme-btn theme-btn-one" type="submit" name="submit-form">Send your Message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12">
+          <div class="service__contact__img">
+            <figure>
+              <img src="assets/images/resource/man.png" alt="">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
