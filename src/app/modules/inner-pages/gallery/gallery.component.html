@@ -1,191 +1,69 @@
-    <app-inner-banner title="Our Gallery" paragraph="Our Gallery"></app-inner-banner>
-    <!-- Gallery-page -->
-    <div class="project__page p_relative see__pad">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 colsm-12">
-                <div class="portfolio__block p_relative">
-                    <div class="portfolio__image">
-                        <figure>
-                            <img src="assets/images/resource/portfolio-01.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="lower__content p_absolute">
-                        <div class="protfolio__text">
-                            <div class="text__block">
-                                <h4>Sustainability</h4>
-                                <p>Design</p>
-                            </div>
-                            <div class="text__block_two">
-                                <h5>2019</h5>
-                            </div>
-                        </div>
-                        <div class="protfolio__button">
-                            <a href="" class="theme-btn theme-btn-one"> View images<i class="icon-02"></i></a>
-                        </div>
-                    </div>
-                </div>
+<app-inner-banner title="Our Gallery" paragraph="Our Gallery"></app-inner-banner>
+
+<!-- Gallery-page -->
+<div class="project__page p_relative see__pad">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of galleryItems; let i = index">
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="portfolio__block p_relative">
+            <div class="portfolio__image">
+              <figure>
+                <img [src]="item.image" [attr.alt]="item.title" class="img-fluid" />
+              </figure>
             </div>
-            <div class="col-lg-3 col-md-6 colsm-12">
-                <div class="portfolio__block p_relative">
-                    <div class="portfolio__image">
-                        <figure>
-                            <img src="assets/images/resource/portfolio-02.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="lower__content p_absolute">
-                        <div class="protfolio__text">
-                            <div class="text__block">
-                                <h4>Sustainability</h4>
-                                <p>Design</p>
-                            </div>
-                            <div class="text__block_two">
-                                <h5>2019</h5>
-                            </div>
-                        </div>
-                        <div class="protfolio__button">
-                            <a href="" class="theme-btn theme-btn-one"> View images<i class="icon-02"></i></a>
-                        </div>
-                    </div>
+
+            <div class="lower__content p_absolute">
+              <div class="protfolio__text">
+                <div class="text__block">
+                  <h4>{{ item.title }}</h4>
+                  <p>{{ item.serviceTitle }}</p>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 colsm-12">
-                <div class="portfolio__block p_relative">
-                    <div class="portfolio__image">
-                        <figure>
-                            <img src="assets/images/resource/portfolio-03.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="lower__content p_absolute">
-                        <div class="protfolio__text">
-                            <div class="text__block">
-                                <h4>Sustainability</h4>
-                                <p>Design</p>
-                            </div>
-                            <div class="text__block_two">
-                                <h5>2019</h5>
-                            </div>
-                        </div>
-                        <div class="protfolio__button">
-                            <a href="" class="theme-btn theme-btn-one"> View images<i class="icon-02"></i></a>
-                        </div>
-                    </div>
+                <div class="text__block_two">
+                  <!-- <h5>2025</h5> -->
                 </div>
+              </div>
+
+              <div class="protfolio__button">
+                <button type="button"
+                        class="theme-btn theme-btn-one"
+                        (click)="openModal(i)"
+                        [attr.aria-label]="'View ' + item.title">
+                  View Image <i class="icon-02"></i>
+                </button>
+              </div>
             </div>
-            <div class="col-lg-3 col-md-6 colsm-12">
-                <div class="portfolio__block p_relative">
-                    <div class="portfolio__image">
-                        <figure>
-                            <img src="assets/images/resource/portfolio-04.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="lower__content p_absolute">
-                        <div class="protfolio__text">
-                            <div class="text__block">
-                                <h4>Sustainability</h4>
-                                <p>Design</p>
-                            </div>
-                            <div class="text__block_two">
-                                <h5>2019</h5>
-                            </div>
-                        </div>
-                        <div class="protfolio__button">
-                            <a href="" class="theme-btn theme-btn-one"> View images<i class="icon-02"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 colsm-12">
-                <div class="portfolio__block p_relative">
-                    <div class="portfolio__image">
-                        <figure>
-                            <img src="assets/images/resource/portfolio-05.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="lower__content p_absolute">
-                        <div class="protfolio__text">
-                            <div class="text__block">
-                                <h4>Sustainability</h4>
-                                <p>Design</p>
-                            </div>
-                            <div class="text__block_two">
-                                <h5>2019</h5>
-                            </div>
-                        </div>
-                        <div class="protfolio__button">
-                            <a href="" class="theme-btn theme-btn-one"> View images<i class="icon-02"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 colsm-12">
-                <div class="portfolio__block p_relative">
-                    <div class="portfolio__image">
-                        <figure>
-                            <img src="assets/images/resource/portfolio-06.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="lower__content p_absolute">
-                        <div class="protfolio__text">
-                            <div class="text__block">
-                                <h4>Sustainability</h4>
-                                <p>Design</p>
-                            </div>
-                            <div class="text__block_two">
-                                <h5>2019</h5>
-                            </div>
-                        </div>
-                        <div class="protfolio__button">
-                            <a href="" class="theme-btn theme-btn-one"> View images<i class="icon-02"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 colsm-12">
-                <div class="portfolio__block p_relative">
-                    <div class="portfolio__image">
-                        <figure>
-                            <img src="assets/images/resource/portfolio-07.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="lower__content p_absolute">
-                        <div class="protfolio__text">
-                            <div class="text__block">
-                                <h4>Sustainability</h4>
-                                <p>Design</p>
-                            </div>
-                            <div class="text__block_two">
-                                <h5>2019</h5>
-                            </div>
-                        </div>
-                        <div class="protfolio__button">
-                            <a href="" class="theme-btn theme-btn-one"> View images<i class="icon-02"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 colsm-12">
-                <div class="portfolio__block p_relative">
-                    <div class="portfolio__image">
-                        <figure>
-                            <img src="assets/images/resource/portfolio-08.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="lower__content p_absolute">
-                        <div class="protfolio__text">
-                            <div class="text__block">
-                                <h4>Sustainability</h4>
-                                <p>Design</p>
-                            </div>
-                            <div class="text__block_two">
-                                <h5>2019</h5>
-                            </div>
-                        </div>
-                        <div class="protfolio__button">
-                            <a href="" class="theme-btn theme-btn-one"> View images<i class="icon-02"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </ng-container>
     </div>
-    <!-- Gallery end-->
+  </div>
+</div>
+
+<!-- modal / lightbox -->
+<div *ngIf="isModalOpen" class="gallery-modal" (click)="onOverlayClick($event)" role="dialog" aria-modal="true">
+  <div class="gallery-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeModal()" [attr.aria-label]="'Close'">&times;</button>
+
+    <div class="gallery-image-container">
+      <button class="nav-btn prev" (click)="prevImage()" aria-label="Previous image">‹</button>
+      <img [src]="currentModalImage" class="gallery-image" [attr.alt]="currentModalTitle" />
+      <button class="nav-btn next" (click)="nextImage()" aria-label="Next image">›</button>
+    </div>
+
+    <div class="text-center mt-3 text-white small">
+      <h5>{{ currentModalTitle }}</h5>
+      <div>{{ modalIndex + 1 }} / {{ galleryItems.length }}</div>
+    </div>
+
+    <div class="thumbs mt-3 d-flex justify-content-center flex-wrap">
+      <button *ngFor="let t of galleryItems; let j = index"
+              class="thumb-btn"
+              [class.active]="j === modalIndex"
+              (click)="viewAt(j)"
+              [attr.aria-label]="'View image ' + (j + 1)">
+        <img [src]="t.image" class="thumb-img" [attr.alt]="t.title">
+      </button>
+    </div>
+  </div>
+</div>

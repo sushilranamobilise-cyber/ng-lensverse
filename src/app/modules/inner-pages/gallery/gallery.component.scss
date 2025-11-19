@@ -18,3 +18,288 @@
     }
   }
 }
+.project__page {
+  .portfolio__block {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 260px; // 👈 fixed height (you can change to 300px if you want bigger cards)
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+
+    .portfolio__image {
+      width: 100%;
+      height: 100%;
+      figure {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; // 👈 ensures all images fill evenly
+          transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+      }
+    }
+
+    &:hover img {
+      transform: scale(1.08);
+      opacity: 0.9;
+    }
+
+    .lower__content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+
+      h4, h5, p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .protfolio__button {
+        .theme-btn-one {
+          background: #ff6600;
+          color: #fff;
+          border: none;
+          padding: 5px 12px;
+          font-size: 13px;
+          border-radius: 4px;
+          transition: background 0.3s;
+          i {
+            margin-left: 5px;
+          }
+          &:hover {
+            background: #ff4500;
+          }
+        }
+      }
+    }
+  }
+
+  // equal spacing for each column
+  .col-lg-3, .col-md-6, .col-sm-12 {
+    display: flex;
+  }
+
+  .portfolio__block {
+    width: 100%;
+  }
+}
+
+/* --- Modal styles (same as sub-service) --- */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .gallery-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+  }
+
+  .gallery-image {
+    max-width: 100%;
+    max-height: 75vh;
+    border-radius: 8px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: -40px;
+    right: -10px;
+    background: none;
+    color: #fff;
+    font-size: 36px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    font-size: 48px;
+    cursor: pointer;
+    padding: 10px 18px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    &.prev {
+      left: -60px;
+    }
+    &.next {
+      right: -60px;
+    }
+  }
+
+  .thumbs {
+    margin-top: 15px;
+    .thumb-btn {
+      border: none;
+      background: none;
+      margin: 3px;
+      padding: 0;
+      cursor: pointer;
+      .thumb-img {
+        width: 60px;
+        height: 40px;
+        object-fit: cover;
+        border: 2px solid transparent;
+        border-radius: 3px;
+        transition: all 0.3s;
+      }
+      &.active .thumb-img {
+        border-color: #ff6600;
+      }
+    }
+  }
+}
+
+
+// 🎨 Variables
+$overlay-bg: rgba(0, 0, 0, 0.85);
+$white: #fff;
+$black: #000;
+$transition: all 0.3s ease;
+
+// 🖼️ Gallery Modal
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: $overlay-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+
+  .gallery-content {
+    position: relative;
+    max-width: 1000px;
+    width: 90%;
+    text-align: center;
+
+    .close-btn {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: $black;
+      color: $white;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 22px;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background: lighten($black, 15%);
+        transform: scale(1.1);
+      }
+    }
+
+    .gallery-image-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .gallery-image {
+        max-width: 100%;
+        max-height: 75vh;
+        border-radius: 8px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        transition: $transition;
+      }
+
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: $white;
+        border: none;
+        font-size: 32px;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: $transition;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+
+        &.prev {
+          left: -60px;
+        }
+
+        &.next {
+          right: -60px;
+        }
+      }
+    }
+
+    .thumbs {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .thumb-btn {
+        background: transparent;
+        border: 2px solid transparent;
+        padding: 2px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: $transition;
+
+        &.active {
+          border-color: $white;
+          transform: scale(1.05);
+        }
+
+        &:hover {
+          border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .thumb-img {
+          width: 80px;
+          height: 60px;
+          object-fit: cover;
+          border-radius: 4px;
+          transition: $transition;
+
+          &:hover {
+            transform: scale(1.03);
+          }
+        }
+      }
+    }
+  }
+}

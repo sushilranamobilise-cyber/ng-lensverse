@@ -2633,3 +2633,9 @@ body.out .mouse-pointer {
 }
 
 
+@media only screen and (max-width: 500px) {
+    .page__title .title {
+      font-size: 38px;
+      line-height: initial;
+    }
+}

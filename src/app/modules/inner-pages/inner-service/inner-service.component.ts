@@ -16,7 +16,7 @@ export class InnerServiceComponent implements OnInit {
   allServices: any[] = [
     { id: 1, title: 'Visual Production' },
     { id: 2, title: 'Post-Production' },
-    { id: 3, title: 'AI & Machine Learning' },
+    { id: 3, title: 'AI & ML Data Labelling' },
     { id: 4, title: 'Brand & Influencer Content' }
   ];
 

@@ -23,16 +23,16 @@ export class ServicesComponent {
   },
   {
     id: 2,
-    title: 'Post-Production',
-    text: 'Editing, color grading, motion & cinematic finishing.',
-    icon: 'icon-08',
+    title: 'AI & ML Data Labelling',
+    text: 'Smart, AI-powered creative storytelling.',
+    icon: 'icon-12',
     buttonIcon: 'icon-05',
   },
   {
     id: 3,
-    title: 'AI & Machine Learning',
-    text: 'Smart, AI-powered creative storytelling.',
-    icon: 'icon-12',
+    title: 'Post-Production',
+    text: 'Editing, color grading, motion & cinematic finishing.',
+    icon: 'icon-08',
     buttonIcon: 'icon-05',
   },
   {

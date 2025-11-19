@@ -32,111 +32,112 @@ const ALL_SERVICES: Service[] = [
       {
         id: 'real-estate',
         title: 'Real Estate & Hospitality Shoots',
-        description: 'Showcase your property or hospitality business with high-quality photography and cinematic videography for hotels, resorts and commercial spaces.',
+        // description: 'Showcase your property or hospitality business with high-quality photography and cinematic videography for hotels, resorts and commercial spaces.',
         image: 'assets/images/services/vp/realstate.jpg'
       },
       {
         id: 'corporate',
         title: 'Corporate Shoots',
-        description: 'Professional corporate photography and videography — conferences, events, employee testimonials and brand films.',
+        // description: 'Professional corporate photography and videography — conferences, events, employee testimonials and brand films.',
         image: 'assets/images/services/vp/corprate.jpg'
       },
       {
         id: 'fashion',
         title: 'Fashion & Editorial Shoots',
-        description: 'Fashion lookbooks, editorial campaigns and model portfolios with creative direction and studio/outdoor setups.',
+        // description: 'Fashion lookbooks, editorial campaigns and model portfolios with creative direction and studio/outdoor setups.',
         image: 'assets/images/services/vp/fesion.jpg'
       },
       {
         id: 'automobile',
         title: 'Product & Automobile Shoots',
-        description: 'High-end product photography and automobile campaigns for catalogs, websites and ads.',
+        // description: 'High-end product photography and automobile campaigns for catalogs, websites and ads.',
         image: 'assets/images/services/vp/automobiles.png'
       },
       {
         id: 'drone',
         title: 'Drone Shoots',
-        description: 'Aerial photography & videography for real estate, events and cinematic projects.',
+        // description: 'Aerial photography & videography for real estate, events and cinematic projects.',
         image: 'assets/images/services/vp/dron_suit.jpg'
       },
       {
         id: 'live-stream',
         title: 'Live Streaming & Broadcasting',
-        description: 'Multi-camera live streaming, webinars and event broadcasting solutions.',
+        // description: 'Multi-camera live streaming, webinars and event broadcasting solutions.',
         image: 'assets/images/services/vp/live_streeming.jpg'
       }
     ]
   },
-  {
+   {
     id: 2,
-    title: 'Post-Production',
-    description: 'Editing, color grading, motion & cinematic finishing.',
-    image: 'assets/images/services/pp/main.jpg',
-    subServices: [
-      {
-        id: 'retouching',
-        title: 'Image Retouching & High-End Editing',
-        description: 'Professional retouching and high-end editing for stills and product photography.',
-        image: 'assets/images/services/pp/retouching.jpg'
-      },
-      {
-        id: 'video-editing',
-        title: 'Video Editing & Motion Graphics',
-        description: 'Polish your footage with editing, motion graphics and storytelling edits.',
-        image: 'assets/images/services/pp/video-editing.jpg'
-      },
-      {
-        id: 'vfx',
-        title: 'Visual Effects (VFX)',
-        description: 'Compositing, CGI and creative VFX to add cinematic value to your projects.',
-        image: 'assets/images/services/pp/vfx.jpg'
-      },
-      {
-        id: 'color-grading',
-        title: 'Color Grading & Correction',
-        description: '专业级 colour grading to set the mood and tone for your videos.',
-        image: 'assets/images/services/pp/color-grading.jpg'
-      },
-      {
-        id: 'animation',
-        title: '2D / 3D Animation',
-        description: 'Explainers, product animations and motion design in 2D/3D.',
-        image: 'assets/images/services/pp/animation.jpg'
-      },
-      {
-        id: 'graphic-design',
-        title: 'Graphic Design & Layout',
-        description: 'Posters, banners and layouts for digital & print campaigns.',
-        image: 'assets/images/services/pp/graphic.jpg'
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: 'AI & Machine Learning',
+    title: 'AI & ML Data Labelling',
     description: 'Smart, AI-powered creative services and data annotation.',
     image: 'assets/images/services/ai/main.jpg',
     subServices: [
       {
         id: 'data-annotation',
         title: 'Data Annotation for AI & ML',
-        description: 'Image, video, text and audio annotation for training robust models.',
-        image: 'assets/images/services/ai/data-annotation.jpg'
+        // description: 'Image, video, text and audio annotation for training robust models.',
+        image: 'assets/images/services/ai/data-annotation-for-AI-&-ML1.png'
       },
       {
         id: 'nlp',
         title: 'Text Annotation & NLP',
-        description: 'Entity labeling, sentiment tagging and other NLP annotations.',
-        image: 'assets/images/services/ai/nlp.jpg'
+        // description: 'Entity labeling, sentiment tagging and other NLP annotations.',
+        image: 'assets/images/services/ai/text-annotation &-NLP2.png'
       },
       {
         id: 'speech',
         title: 'Audio & Speech Annotation',
-        description: 'Transcription, speaker labelling and audio event tagging.',
-        image: 'assets/images/services/ai/speech.jpg'
+        // description: 'Transcription, speaker labelling and audio event tagging.',
+        image: 'assets/images/services/ai/audio-&-speech-annotation1.png'
       }
     ]
   },
+  {
+    id: 3,
+    title: 'Post-Production',
+    description: 'Editing, color grading, motion & cinematic finishing.',
+    // image: 'assets/images/services/pp/main.jpg',
+    subServices: [
+      {
+        id: 'retouching',
+        title: 'Image Retouching & High-End Editing',
+        // description: 'Professional retouching and high-end editing for stills and product photography.',
+        image: 'assets/images/services/pp/Image-Retouching-&-High-End-Editing3.png'
+      },
+      {
+        id: 'video-editing',
+        title: 'Video Editing & Motion Graphics',
+        // description: 'Polish your footage with editing, motion graphics and storytelling edits.',
+        image: 'assets/images/services/pp/Video-editing-&-Motion-Graphics.png'
+      },
+      {
+        id: 'vfx',
+        title: 'Visual Effects (VFX)',
+        // description: 'Compositing, CGI and creative VFX to add cinematic value to your projects.',
+        image: 'assets/images/services/pp/Visual-effects-VFX1.png'
+      },
+      {
+        id: 'color-grading',
+        title: 'Color Grading & Correction',
+        // description: '专业级 colour grading to set the mood and tone for your videos.',
+        image: 'assets/images/services/pp/color-grading-&-correction.png'
+      },
+      {
+        id: 'animation',
+        title: '2D / 3D Animation',
+        // description: 'Explainers, product animations and motion design in 2D/3D.',
+        image: 'assets/images/services/pp/2dvs3d-animation.jpg'
+      },
+      {
+        id: 'graphic-design',
+        title: 'Graphic Design & Layout',
+        // description: 'Posters, banners and layouts for digital & print campaigns.',
+        image: 'assets/images/services/pp/graphic-design-&-layout1.jpg'
+      }
+    ]
+  },
+ 
   {
     id: 4,
     title: 'Brand & Influencer Content',
@@ -146,20 +147,20 @@ const ALL_SERVICES: Service[] = [
       {
         id: 'content-creation',
         title: 'Content Creation for Brands & Influencers',
-        description: 'Concept-to-delivery social videos, reels and brand storytelling.',
-        image: 'assets/images/services/brand/content.jpg'
+        // description: 'Concept-to-delivery social videos, reels and brand storytelling.',
+        image: 'assets/images/services/brand/content-creation for-Brands-&-Influencer1.png'
       },
       {
         id: 'scriptwriting',
         title: 'Scriptwriting & Strategy',
-        description: 'Content strategy, scripting and campaign planning.',
-        image: 'assets/images/services/brand/scriptwriting.jpg'
+        // description: 'Content strategy, scripting and campaign planning.',
+        image: 'assets/images/services/brand/scriptwriting-&-strategy1.png'
       },
       {
         id: 'editing-packages',
         title: 'Editing Packages for Creators',
-        description: 'End-to-end editing packages optimized for platforms and formats.',
-        image: 'assets/images/services/brand/editing.jpg'
+        // description: 'End-to-end editing packages optimized for platforms and formats.',
+        image: 'assets/images/services/brand/editing-package-for-creators1.png'
       }
     ]
   }

@@ -25,6 +25,7 @@
   border-radius: 12px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 1px 1px 9px #f9650e80;
 
   figure {
     margin: 0;
@@ -41,17 +42,24 @@
   .service_overlay {
     position: absolute;
     inset: 0; /* top:0; right:0; bottom:0; left:0 */
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.75);
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     text-align: center;
-    padding: 1.5rem;
-    opacity: 0;
-    transform: translateY(10%);
-    transition: all 0.35s ease;
+    padding: 0.5rem !important;
+    height: 32%;
+    top: 68%;
+      
+    h4 {
+        margin-bottom: 0;
+        line-height: normal;
+        font-size: 1.25rem;
+        font-weight: 550;
+    }
+    
   }
 
   /* Hover effects */
@@ -179,6 +187,14 @@
     .btn {
       font-size: 14px;
       padding: 6px 16px;
+    }
+  }
+}
+
+.service__details__1__cat {
+  li {
+    a {
+      font-family: 'open sans', sans-serif;
     }
   }
 }
